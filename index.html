@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hafiz Putra Ludyanto — Senior Backend Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 17px;
+            line-height: 1.6;
             background: #0d1117;
             color: #e6edf3;
             min-height: 100vh;
@@ -16,75 +21,128 @@
             justify-content: center;
         }
         .container {
-            max-width: 640px;
-            padding: 2rem;
+            max-width: 620px;
+            width: 100%;
+            padding: 3rem 2rem;
             text-align: center;
         }
-        h1 { font-size: 2rem; margin-bottom: 0.25rem; color: #f0f6fc; }
-        .subtitle { color: #8b949e; font-size: 1.1rem; margin-bottom: 1.5rem; }
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: #f0f6fc;
+            letter-spacing: -0.3px;
+        }
+        .subtitle {
+            color: #8b949e;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
         .bio {
             color: #c9d1d9;
-            line-height: 1.6;
+            line-height: 1.65;
             margin-bottom: 2rem;
             font-size: 0.95rem;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .links {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: 0.6rem;
             justify-content: center;
             margin-bottom: 2rem;
         }
         .links a {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
+            gap: 0.45rem;
+            padding: 0.5rem 1.1rem;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
             font-weight: 500;
-            transition: opacity 0.2s;
+            transition: opacity 0.15s;
         }
-        .links a:hover { opacity: 0.85; }
+        .links a:hover { opacity: 0.8; }
         .links a.linkedin { background: #0077B5; color: #fff; }
         .links a.github { background: #21262d; color: #f0f6fc; border: 1px solid #30363d; }
-        .links a.email { background: #1a1e24; color: #58a6ff; border: 1px solid #30363d; }
-        .links a.resume { background: #238636; color: #fff; }
+        .links a.email { background: #161b22; color: #58a6ff; border: 1px solid #30363d; }
         .tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4rem;
+            gap: 0.35rem;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
         }
         .tech span {
             background: #161b22;
             border: 1px solid #30363d;
-            padding: 0.25rem 0.6rem;
+            padding: 0.2rem 0.55rem;
             border-radius: 12px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: #8b949e;
         }
-        .projects { text-align: left; margin-top: 2rem; }
-        .projects h2 { font-size: 1.1rem; margin-bottom: 1rem; color: #f0f6fc; }
+        .projects { text-align: left; }
+        .projects h2 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #8b949e;
+            margin-bottom: 0.85rem;
+        }
         .project {
             background: #161b22;
             border: 1px solid #30363d;
-            border-radius: 6px;
-            padding: 1rem;
-            margin-bottom: 0.75rem;
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+            margin-bottom: 0.6rem;
         }
-        .project a {
+        .project-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            margin-bottom: 0.3rem;
+        }
+        .project-header a {
             color: #58a6ff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
-        .project a:hover { text-decoration: underline; }
-        .project p { color: #8b949e; font-size: 0.85rem; margin-top: 0.3rem; }
-        .footer { color: #484f58; font-size: 0.8rem; margin-top: 2rem; }
-        svg { width: 16px; height: 16px; fill: currentColor; }
+        .project-header a:hover { text-decoration: underline; }
+        .project-header .project-links {
+            margin-left: auto;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .project-header .project-links a {
+            color: #8b949e;
+            font-size: 0.78rem;
+            font-weight: 400;
+        }
+        .project p {
+            color: #8b949e;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .footer {
+            color: #484f58;
+            font-size: 0.78rem;
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+        svg { width: 15px; height: 15px; fill: currentColor; flex-shrink: 0; }
+
+        @media (max-width: 640px) {
+            .container { padding: 2rem 1.25rem; }
+            h1 { font-size: 1.5rem; }
+            body { font-size: 16px; align-items: flex-start; }
+        }
     </style>
 </head>
 <body>
@@ -92,9 +150,9 @@
         <h1>Hafiz Putra Ludyanto</h1>
         <p class="subtitle">Senior Backend Engineer</p>
         <p class="bio">
-            7+ years building distributed systems in Go. Currently at Astro (21+ microservices),
-            previously FrankieOne, Flip, Mekari, Kitabisa, and Tokopedia.
-            Active open-source contributor with 2,900+ GitHub contributions/year.
+            I build reliable distributed systems in Go — notification infrastructure for 11M users,
+            compliance verification pipelines end-to-end, and 21+ microservices at Astro.
+            7+ years across fintech, e-commerce, and RegTech. 2,900+ GitHub contributions/year.
         </p>
 
         <div class="links">
@@ -106,10 +164,6 @@
                 <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                 GitHub
             </a>
-            <a href="Hafiz_Putra_Ludyanto_CV_2025.pdf" class="resume" download>
-                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                Resume
-            </a>
             <a href="mailto:hafizputraludyanto@gmail.com" class="email">
                 <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
                 Email
@@ -117,28 +171,52 @@
         </div>
 
         <div class="tech">
-            <span>Go</span><span>Python</span><span>TypeScript</span><span>gRPC</span>
-            <span>PostgreSQL</span><span>Redis</span><span>Kafka</span><span>Kubernetes</span>
-            <span>AWS</span><span>Terraform</span><span>Docker</span>
+            <span>Go</span><span>gRPC</span><span>PostgreSQL</span><span>Redis</span>
+            <span>Kafka</span><span>Kubernetes</span><span>AWS</span><span>Terraform</span>
         </div>
 
         <div class="projects">
-            <h2>Featured Projects</h2>
+            <h2>Selected Projects</h2>
+
             <div class="project">
-                <a href="https://github.com/fairyhunter13/ai-cv-evaluator">ai-cv-evaluator</a>
-                <p>AI-powered CV evaluation service with multi-LLM providers, Clean Architecture, and full observability. <a href="https://ai-cv-evaluator.web.id" style="color:#58a6ff">Live Demo</a></p>
+                <div class="project-header">
+                    <a href="https://github.com/fairyhunter13/ai-cv-evaluator">ai-cv-evaluator</a>
+                    <span class="project-links">
+                        <a href="https://ai-cv-evaluator.web.id" target="_blank" rel="noopener">Live →</a>
+                        <a href="https://github.com/fairyhunter13/ai-cv-evaluator" target="_blank" rel="noopener">GitHub →</a>
+                    </span>
+                </div>
+                <p>Multi-LLM CV evaluation in Go — vector DB semantic matching, full observability (Grafana/Prometheus/Jaeger), 80% coverage gate, blue-green deployment.</p>
             </div>
+
             <div class="project">
-                <a href="https://github.com/fairyhunter13/opencode-search-engine">opencode-search-engine</a>
-                <p>GPU-accelerated semantic code search engine with ONNX embeddings and MCP server integration.</p>
+                <div class="project-header">
+                    <a href="https://github.com/fairyhunter13/opencode-search-engine">opencode-search-engine</a>
+                    <span class="project-links">
+                        <a href="https://github.com/fairyhunter13/opencode-search-engine" target="_blank" rel="noopener">GitHub →</a>
+                    </span>
+                </div>
+                <p>Local-first semantic code search — GPU-accelerated ONNX embeddings, MCP server integration, no data leaves your machine.</p>
             </div>
+
             <div class="project">
-                <a href="https://github.com/fairyhunter13/scalable-coupon-system">scalable-coupon-system</a>
-                <p>Atomic flash-sale coupon system with stress/chaos testing and high-concurrency claim handling.</p>
+                <div class="project-header">
+                    <a href="https://github.com/fairyhunter13/scalable-coupon-system">scalable-coupon-system</a>
+                    <span class="project-links">
+                        <a href="https://github.com/fairyhunter13/scalable-coupon-system" target="_blank" rel="noopener">GitHub →</a>
+                    </span>
+                </div>
+                <p>High-concurrency coupon claiming in Go — atomic operations under flash-sale load, stress and chaos test suite, zero double-claims.</p>
             </div>
+
             <div class="project">
-                <a href="https://github.com/fairyhunter13/happy-bday-app">happy-bday-app</a>
-                <p>Enterprise-grade birthday reminder service — 992 tests across 59 suites, circuit breaker, quorum queues.</p>
+                <div class="project-header">
+                    <a href="https://github.com/fairyhunter13/happy-bday-app">happy-bday-app</a>
+                    <span class="project-links">
+                        <a href="https://github.com/fairyhunter13/happy-bday-app" target="_blank" rel="noopener">GitHub →</a>
+                    </span>
+                </div>
+                <p>Birthday reminder service built to enterprise standards — 992 tests across 59 suites (unit/integration/chaos/mutation), circuit breaker, RabbitMQ quorum queues.</p>
             </div>
         </div>
 
